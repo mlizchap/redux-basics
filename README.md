@@ -18,9 +18,11 @@
 
 ### The Store Setup
 - install libraries:
-    `$ npm install react-redux`
-    `$ npm install redux`
-- import the libraries, specifically the `Provider` component from `react-redux` and the `createStore` function from `redux`
+    ```javascript
+    $ npm install react-redux
+    $ npm install redux
+    ```
+- import the libraries, specifically the `Provider` component from `react-redux` and the `createStore` function from redux
     ```javascript
     import { Provider } from 'react-redux';
     import { createStore } from 'redux';
