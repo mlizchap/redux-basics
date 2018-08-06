@@ -6,8 +6,8 @@
 - **createStore**: a function from the Redux library that creates the *store*. 
 - **store**: holds the state of the application
 - **Reducers**: accepts an action and state and returns new state 
- - **actions**:
- - **actionCreators**:
+ - **actions**: an object has a type that will be filtered through reducers 
+ - **actionCreators**: a function that returns an object (an action)
  
  ## createStrore
 - Accepts an argument of the top level reducer and returns the store of the appliation which is assigned to a variable
@@ -64,14 +64,14 @@
     }
     ```
 ### Action Creators
-    ```javascript
+```javascript
     export function selectBook(book) {
         return {
             type: 'BOOK_SELECTED', // types are usually in a different file
             payload: book
         };
     }
-    ```
+```
 
 ## React-Redux
 - the render method is called every time the store's state changes 
