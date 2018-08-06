@@ -17,7 +17,7 @@
         - ex: `store.subscribe(() => document.body.innerHTML = store.getState())`
 - Accepts an argument of the top level reducer and returns the store of the appliation which is assigned to a variable
     ```java
-    const store = createStore(counter);
+    const store = createStore(reducers);
     ```
 - wrap the app around a `Provider` tag that has the store property 
 ```javascript 
