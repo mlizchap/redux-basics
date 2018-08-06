@@ -17,24 +17,24 @@
 - Accepts an argument of the top level reducer and returns the store of the appliation which is assigned to a variable
 
 ### The Store Setup
-    - install libraries:
-        `$ npm install react-redux`
-        `$ npm install redux`
-    - import the libraries, specifically the `Provider` component from `react-redux` and the `createStore` function from `redux`
-        ```javascript
-        import { Provider } from 'react-redux';
-        import { createStore } from 'redux';
-        ```
-    - use the createStore function from redux to create the store with reducers and assign to a variable
-        ```javascript
-        const store = createStore(<reducers>)
-        ```
-    - wrap the app around a `Provider` tag that has the store property 
-        ```javascript 
-        <Provider store={store}>
-            /* app will go here  */
-        </Provider>
-        ```
+- install libraries:
+    `$ npm install react-redux`
+    `$ npm install redux`
+- import the libraries, specifically the `Provider` component from `react-redux` and the `createStore` function from `redux`
+    ```javascript
+    import { Provider } from 'react-redux';
+    import { createStore } from 'redux';
+    ```
+- use the createStore function from redux to create the store with reducers and assign to a variable
+    ```javascript
+    const store = createStore(<reducers>)
+    ```
+ - wrap the app around a `Provider` tag that has the store property 
+    ```javascript 
+    <Provider store={store}>
+        /* app will go here  */
+    </Provider>
+    ```
 ## Actions 
  - **action** - an object that will be filtered through reducers based on its `type` property 
     ```javascript
