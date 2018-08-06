@@ -16,15 +16,22 @@
     3. `store.subscribe(fn)` - lets you register a callback function that will be called any time an action has been dispatched.  
         - ex: `store.subscribe(() => document.body.innerHTML = store.getState())`
 - Accepts an argument of the top level reducer and returns the store of the appliation which is assigned to a variable
-    ```java
-    const store = createStore(reducers);
-    ```
-- wrap the app around a `Provider` tag that has the store property 
-```javascript 
-<Provider store={createStoreWithMiddleware(reducers)}>
-    /* app will go here  */
-</Provider>
-```
+- *to use:* 
+    - import the libraries, specifically the `Provider` component from `react-redux` and the `createStore` function from `redux`
+        ```javascript
+        import { Provider } from 'react-redux';
+        import { createStore } from 'redux';
+        ```
+    - use the createStore function from redux to create the store with reducers and assign to a variable
+        ```javascript
+        const store = createStore(<reducers>)
+        ```
+    - wrap the app around a `Provider` tag that has the store property 
+        ```javascript 
+        <Provider store={store}>
+            /* app will go here  */
+        </Provider>
+        ```
 ## Actions 
  - **action** - an object that will be filtered through reducers based on its `type` property 
     ```javascript
@@ -137,6 +144,7 @@ export default rootReducer;
 - setup: 
     ```javascript
     import promise from 'redux-promise';
+    import { createStore, applyMiddleware } from 'redux';
 
     const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
