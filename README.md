@@ -33,7 +33,7 @@
         payload: request 
     }
     ```
-## Create the Action creator
+### Create the Action creator
 - **action creator** - a function that returns an action 
     ```javascript
     export function selectBook(book) {
@@ -44,9 +44,8 @@
     }
     ```
 
-
-
-## Create the reducers
+## Reducers 
+### Create the reducers
 - **reducer**: - accepts an action and state and manipulates the state to return new state 
     ```javascript
     export default function(state = null, action) {
@@ -58,7 +57,7 @@
     }
     ```
 
-## Combine the reducers 
+### Combine the reducers 
 - creates a top level reducer to be used to create the store 
 ```javascript
 import { combineReducers } from 'redux';
@@ -73,14 +72,14 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
-### Create the Containers
+## Containers
 - containers = a component connected to redux
 - use the react-redux library
     ```javascript
     $ npm install react-redux
     ```
 
-## Wire Reducer into Component
+### Wire Reducer into Component
 - to make a component a container user `connect`
     ```javascript
     import { connect } from 'react-redux'
@@ -131,7 +130,7 @@ export default rootReducer;
     <li onClick={() => this.props.selectBook(book)}
     ```
 
-## Advanced Redux - working with data
+## Advanced Redux - Working with Async Code and Data 
 
 ### Redux Promise 
 - if the lib sees a payload that is a promise - the action is stopped until the promise is resolved and sent to all the reducers
