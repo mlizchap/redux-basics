@@ -6,8 +6,7 @@
 
 
 
-## Setup the Store
-- `$ npm install react-redux`
+## The Store
 - **state** -  is contained in a single object and is *read only*
 - **store** - holds the state, contains 3 important methods: 
     1. `store.getState()` - retrieves the current state of the redux store 
@@ -16,7 +15,11 @@
     3. `store.subscribe(fn)` - lets you register a callback function that will be called any time an action has been dispatched.  
         - ex: `store.subscribe(() => document.body.innerHTML = store.getState())`
 - Accepts an argument of the top level reducer and returns the store of the appliation which is assigned to a variable
-- *to use:* 
+
+### The Store Setup
+    - install libraries:
+        `$ npm install react-redux`
+        `$ npm install redux`
     - import the libraries, specifically the `Provider` component from `react-redux` and the `createStore` function from `redux`
         ```javascript
         import { Provider } from 'react-redux';
