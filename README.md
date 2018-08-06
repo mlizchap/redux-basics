@@ -29,7 +29,7 @@
     ```
 - use the createStore function from redux to create the store with reducers and assign to a variable
     ```javascript
-    const store = createStore(<reducers>)
+    const store = createStore(() => {}) // function will eventually be top level reducer
     ```
  - wrap the app around a `Provider` tag that has the store property 
     ```javascript 
