@@ -2,10 +2,6 @@
 
 - **Redux**: state management in React 
 
-## Initial Setup 
-
-
-
 ## The Store
 - **state** -  is contained in a single object and is *read only*
 - **store** - holds the state, contains 3 important methods: 
