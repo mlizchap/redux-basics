@@ -24,8 +24,7 @@
     ```
 - import the libraries, specifically the `Provider` component from `react-redux` and the `createStore` function from redux
     ```javascript
-    import { Provider } from 'react-redux';
-    import { createStore } from 'redux';
+    import { Provider } from 'react-redux redux';
     ```
 - use the createStore function from redux to create the store with reducers and assign to a variable
     ```javascript
