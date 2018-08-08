@@ -79,12 +79,17 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
+### Wire the reducer to the store
+- this allows the reducers to return the nessessary state to be contained in the store and eventually dispatched to the appropriate containers
+```
+import reducers from './reducers';
+
+const store = createStore(reducers);
+```
+
+
 ## Containers
 - containers = a component connected to redux
-- use the react-redux library
-    ```javascript
-    $ npm install react-redux
-    ```
 
 ### Wire Reducer into Component
 - to make a component a container user `connect`
