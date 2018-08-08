@@ -81,11 +81,11 @@ export default rootReducer;
 
 ### Wire the reducer to the store
 - this allows the reducers to return the nessessary state to be contained in the store and eventually dispatched to the appropriate containers
-```
-import reducers from './reducers';
+    ```javascript
+    import reducers from './reducers';
 
-const store = createStore(reducers);
-```
+    const store = createStore(reducers);
+    ```
 
 
 ## Containers
