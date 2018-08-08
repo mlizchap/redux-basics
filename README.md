@@ -101,9 +101,7 @@ export default rootReducer;
 - use the function `mapStateToProps` to have access to the application state and use in the component 
     ```javascript
     function mapStateToProps(state) {
-        return {
-            books: state.books /* whatever is returned will show up as props inside of BookList */
-        }
+        return books: state.books /* whatever is returned will show up as props inside of BookList */
     }
     ```
 - the state returned from mapStateToProps can be used in the component 
