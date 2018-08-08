@@ -112,13 +112,12 @@ export default rootReducer;
     ```
 
 ### Wire up the action to a component 
-- `bindActionCreators`: makes sure the action flows thru all the diff reducers 
-    ```javascript
-    import { bindActionCreators } from 'redux';
-    ```
-- import the action and `bindActionCreators` from redux
+- `bindActionCreators`: makes sure the action flows thru all the diff reducers
+- import the action, `bindActionCreators` from redux, and `connect` from react-redux
     ```javascript
     import { selectBook } from '../actions/index';
+    import { connect } from 'react-redux';
+    import { bindActionCreators } from 'redux';
     ```
 - use `mapDispatchToProps` - returns a function that makes sure the action is passed to the reducers 
     - longhand version: 
