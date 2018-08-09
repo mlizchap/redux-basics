@@ -32,34 +32,13 @@
         /* app will go here  */
     </Provider>
     ```
-## Actions 
- - **action** - an object that will be filtered through reducers based on its `type` property 
-    ```javascript
-    {
-        type: FETCH_POSTS,
-        payload: request 
-    }
-    ```
-### Create the Action creator
-- **action creator** - a function that returns an action 
-    ```javascript
-    export function selectBook(book) {
-        return {
-            type: 'BOOK_SELECTED', // types are usually in a different file
-            payload: book
-        };
-    }
-    ```
-
+    
 ## Reducers 
 ### Create the reducers
 - **reducer**: - accepts an action and state and manipulates the state to return new state 
     ```javascript
     export default function(state = null, action) {
-        switch (action.type) {
-            case 'BOOK_SELECTED': 
-                return action.payload /*piece of state used in application */
-        }
+        // switch statement to filter through action types will eventually go here 
         return state;
     }
     ```
@@ -86,12 +65,8 @@ export default rootReducer;
 
     const store = createStore(reducers);
     ```
-
-
-## Containers
+### Wire up the reducer to component (component --> container)    
 - containers = a component connected to redux
-
-### Wire Reducer into Component
 - to make a component a container user `connect`
     ```javascript
     import { connect } from 'react-redux'
@@ -109,34 +84,56 @@ export default rootReducer;
     <div>Title: {this.props.book.title}</div>
     ```
 
+## Actions 
+### Create the action with an action creator
+ - **action** - triggers a manipulation in state. The action object that will be filtered through reducers based on its `type` property 
+- **action creator** - a function that returns an action 
+    ```javascript
+    export function createBook(userInput) {
+        return {
+            type: 'CREATE_BOOK', // types are usually in a different file
+            payload: userInput
+        };
+    }
+    ```
+### insert the action into the reducer 
+```javascript
+export default function(state = null, action) {
+    switch (action.type) {
+        case CREATE_BOOK: 
+            return [...state, {name: action.payload, completed: false }];
+    }
+    return state;
+}
+```
+
 ### Wire up the action to a component 
 - `bindActionCreators`: makes sure the action flows thru all the diff reducers
 - import the action, `bindActionCreators` from redux, and `connect` from react-redux
     ```javascript
-    import { selectBook } from '../actions/index';
+    import { createBook } from '../actions/index';
     import { connect } from 'react-redux';
     import { bindActionCreators } from 'redux';
     ```
 - use `mapDispatchToProps` - returns a function that makes sure the action is passed to the reducers 
-    - longhand version: 
+- the function returned from the function can be used as props in the container, when the function is called, the result will be passed (dipatched) to all the reducers.
+    - **longhand version**: 
         ```javascript
-        /** anything returned from this function will return as props on the BookList container **/
         function mapDispatchToProps(dispatch) {
-            /** whenever selectBook is called, the result should be passed (dispatched) to all of our reducers **/
-            return bindActionCreators({ selectBook: selectBook }, dispatch) 
+            return bindActionCreators({ createBook: createBook }, dispatch) 
         }
         ```
-        - connect the dispatch to the component 
-            ```javascript
-            export default connect(mapStateToProps, mapDispatchToProps)(BookList);
-            ```
-    - shorthand version: 
+    - connect the dispatch to the component 
         ```javascript
-        export default connect(mapStateToProps, { fetchPosts })(PostsIndex);
+        export default connect(mapStateToProps, mapDispatchToProps)(BookList);
         ```
-- `dispatchToProps` allows the action to be used inside the component as props
+    - **shorthand version**: 
+        ```javascript
+        export default connect(mapStateToProps, { createBook })(PostsIndex);
+        ```
+- After you `mapDispatchToProps`, you can use inside the component as props
     ```javascript
-    <li onClick={() => this.props.selectBook(book)}
+    <li onClick={() => this.props.createBook(this.state.input)}
     ```
 
 ## Advanced Redux - Working with Async Code and Data 
