@@ -5,6 +5,12 @@
 ## Example
 [Todo App with Redux and React](https://github.com/mlizchap/react-redux-todo)
 
+## TOC
+- [The Store](#the-store)
+- [Reducers](#reducers)
+- [Actions](#actions)
+- [Working with Async Code and Data](Working-with-Async-Code-and-Data)
+
 ## The Store
 - **state** -  is contained in a single object and is *read only*
 - **store** - holds the state, contains 3 important methods: 
@@ -139,7 +145,7 @@ export default function(state = null, action) {
     <li onClick={() => this.props.createBook(this.state.input)}
     ```
 
-## Advanced Redux - Working with Async Code and Data 
+## Working with Async Code and Data 
 
 ### Redux Promise 
 - if the lib sees a payload that is a promise - the action is stopped until the promise is resolved and sent to all the reducers
