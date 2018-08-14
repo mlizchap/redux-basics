@@ -2,6 +2,9 @@
 
 - **Redux**: state management in React 
 
+## Example
+[Todo App with Redux and React](https://github.com/mlizchap/react-redux-todo)
+
 ## The Store
 - **state** -  is contained in a single object and is *read only*
 - **store** - holds the state, contains 3 important methods: 
