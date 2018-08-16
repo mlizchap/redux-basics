@@ -111,8 +111,9 @@ export default function(state = null, action) {
     switch (action.type) {
         case CREATE_BOOK: 
             return [...state, {name: action.payload, completed: false }];
+        default:
+            return state;
     }
-    return state;
 }
 ```
 
