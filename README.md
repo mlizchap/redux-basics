@@ -10,6 +10,8 @@
 - [Reducers](#reducers)
 - [Actions](#actions)
 - [Working with Async Code and Data](Working-with-Async-Code-and-Data)
+    - [Redux Promise](#redux-promise)
+    - [Redux Thunk](#redux-thunk)
 
 ## The Store
 - **state** -  is contained in a single object and is *read only*
@@ -76,6 +78,7 @@ export default rootReducer;
     ```
 ### Wire up the reducer to component (component --> container)    
 - containers = a component connected to redux
+- connect = a function that connects a component to the redux store.  The component can call an action creator and dipatch a new action.
 - to make a component a container user `connect`
     ```javascript
     import { connect } from 'react-redux'
@@ -189,6 +192,16 @@ export default function(state = {}, action) {
     }
 }
 ```
+
+## Redux Thunk
+- middleware for redux that provides additional functionality, the action creator is able to return a function (usually just returns an action).  
+- allows the actionCreator to dispatch multiple actions with `store.dispatch()`
+- allows access to current state with `store.getState()`
+- to install: 
+```javascript
+$ npm install redux-thunk
+```
+- add to middleware 
 
 
 
