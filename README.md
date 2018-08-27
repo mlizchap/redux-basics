@@ -9,7 +9,7 @@
 - [The Store](#the-store)
 - [Reducers](#reducers)
 - [Actions](#actions)
-- [Working with Async Code and Data](#Working-with-Async-Code-and-Data)
+- [Working with Async Code and Data](#working-with-async-code-and-data)
     - [Redux Promise](#redux-promise)
     - [Redux Thunk](#redux-thunk)
 
